@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: #000033;
+            color: lightyellow;
+        }
+        button{
+            background-color: #624735;
+            color: #a99e56;
+        }
+        #bonus_btn{
+            background-color: white;
+            color: red;
+        }
+        table{
+            border: 1px solid #008833;
+        }
+    </style>
+    <script src="/L2S1_PW1/L2S1_PW1.js"></script>
+</head>
+<body>
+
+
+<section id="bonus">
+    <h1>Bonus Section</h1>
+    <h3>It will show you new random picture on button press.</h3>
+    <button onclick=bonus() id='bonus_btn'>Get another image</button>
+    <div id="bonus_img_container"></div>
+</section>
+<section id="1">
+    <h1>Section 1</h1>
+    <h3>Looking for numbers < 1000, where sum of its digits to the power 3 give number itself.</h3>
+    <button onclick=section1()>Refresh section 1</button>
+    <div id="1_result_container"></div>
+</section>
+<section id="2">
+    <h1>Section 2</h1>
+    <h3>It will give you random number between 0 and 10000 and change for it.</h3>
+    <button onclick=section2()>Refresh section 2</button>
+    <div id="2_result_container"></div>
+</section>
+<section id="3">
+    <h1>Section 3</h1>
+    <h3>It will give you random valid credit card number</h3>
+    <button onclick=section3()>Refresh section 3</button>
+    <div id="3_result_container"></div>
+</section>
+<section id="4">
+    <h1>Section 4</h1>
+    <h3>It will display table for trigonometric functions and their values</h3>
+    <button onclick=section4()>Refresh section 4</button>
+    <div id="4_result_container"></div>
+</section>
+
+</body>
+</html>
