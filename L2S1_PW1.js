@@ -47,6 +47,7 @@ async function section4(){
             </tr>`;
     let res_bottom = `</table>`;
     let res_middle = "";
+    _section4.innerHTML = res_top + res_middle + res_bottom;
     let promise = await fetch(`/L2S1_PW1/L2S1_PW1.php?obj=4`);
     let data = await promise.json();
     for (let ii = 0; ii < 360; ii++) {
