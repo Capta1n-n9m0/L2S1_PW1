@@ -1,6 +1,6 @@
 <?php
 
-# header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json; charset=utf-8');
 
 function obj31($num){
     $digits = str_split("$num");
@@ -95,14 +95,26 @@ function get_obj33(){
 function obj4(){
     $res = array();
     for($degree = 0; $degree < 360; $degree++){
-        $rad = deg2rad($degree);
-        $sin_v = sin($rad);
-        $cos_v = cos($rad);
-        $tan_v = tan($rad);
-        $cotan_v = fdiv(1, $tan_v);
-        array_push($res, array($rad, $sin_v, $cos_v, $tan_v, $cotan_v));
+        $rad_t = deg2rad($degree);
+        $rad_v = "$rad_t";
+        $sin_t = sin($rad_t);
+        $sin_v = "$sin_t";
+        $con_t = cos($rad_t);
+        $cos_v = "$con_t";
+        $tan_t = tan($rad_t);
+        $tan_v = "$rad_t";
+        $cotan_t = fdiv(1, $tan_v);
+        $cotan_v = "$cotan_t";
+        array_push($res, array($rad_v, $sin_v, $cos_v, $tan_v, $cotan_v));
     }
     return $res;
+}
+
+function get_obj4($chunk){
+    /* it will chop 360 element into 10 groups of 36
+     * and then send each one of them
+     * */
+    return array_slice(obj4(), $chunk*36, 36);
 }
 
 switch ($_GET['obj']){

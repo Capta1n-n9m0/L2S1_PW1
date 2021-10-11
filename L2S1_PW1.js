@@ -35,8 +35,6 @@ async function section3(){
 
 async function section4(){
     let _section4 = document.getElementById("4_result_container");
-    let data = await (await fetch('/L2S1_PW1/L2S1_PW1.php?obj=4')).json();
-    console.log(data);
     let res_top =
         `<table>
             <tr>
@@ -46,20 +44,22 @@ async function section4(){
                 <th>Cos</th>
                 <th>Tan</th>
                 <th>Cotan</th>
-            </tr>`
-    let res_bottom = `</table>`
-    let res_middle = ""
-    for(let ii = 0; ii < 360; ii++){
+            </tr>`;
+    let res_bottom = `</table>`;
+    let res_middle = "";
+    let promise = await fetch(`/L2S1_PW1/L2S1_PW1.php?obj=4`);
+    let data = await promise.json();
+    for (let ii = 0; ii < 360; ii++) {
         let res_row =
-            `<tr>
+           `<tr>
                 <th>${ii}</th>
                 <th>${data[ii][0]}</th>
                 <th>${data[ii][1]}</th>
                 <th>${data[ii][2]}</th>
                 <th>${data[ii][3]}</th>
                 <th>${data[ii][4]}</th>
-             </tr>`;
-        res_middle += res_row;
+            </tr>`;
+            res_middle += res_row;
     }
     _section4.innerHTML = res_top + res_middle + res_bottom;
 
